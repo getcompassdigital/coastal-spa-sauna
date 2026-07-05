@@ -131,10 +131,25 @@ a {
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, var(--color-slate) 0%, var(--color-slate-dark) 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-slate) 0%, var(--color-slate-dark) 55%, #33485499 100%);
+  background-size: 150% 150%;
+  animation: hero-gradient 18s ease infinite;
   color: #fff;
-  padding: 5rem 0;
+  padding: 5rem 0 7rem;
   text-align: center;
+}
+
+@keyframes hero-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -142,6 +157,8 @@ a {
   margin: 0 0 1rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  opacity: 0;
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
 }
 
 .hero .subheadline {
@@ -149,14 +166,107 @@ a {
   margin: 0 auto 2rem;
   font-size: 1.1rem;
   color: var(--color-cream);
+  opacity: 0;
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+.hero .btn-lg {
+  opacity: 0;
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Rising bubbles */
+.hero-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bubbles span {
+  position: absolute;
+  bottom: -60px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: bubble-rise linear infinite;
+}
+
+.hero-bubbles span:nth-child(1)  { left: 6%;  width: 14px; height: 14px; animation-duration: 13s; animation-delay: 0s; }
+.hero-bubbles span:nth-child(2)  { left: 15%; width: 28px; height: 28px; animation-duration: 17s; animation-delay: 3s; }
+.hero-bubbles span:nth-child(3)  { left: 24%; width: 10px; height: 10px; animation-duration: 11s; animation-delay: 1s; }
+.hero-bubbles span:nth-child(4)  { left: 33%; width: 22px; height: 22px; animation-duration: 15s; animation-delay: 5s; }
+.hero-bubbles span:nth-child(5)  { left: 42%; width: 16px; height: 16px; animation-duration: 14s; animation-delay: 2s; }
+.hero-bubbles span:nth-child(6)  { left: 50%; width: 32px; height: 32px; animation-duration: 19s; animation-delay: 6s; background: rgba(250, 169, 72, 0.14); border-color: rgba(250, 169, 72, 0.22); }
+.hero-bubbles span:nth-child(7)  { left: 59%; width: 12px; height: 12px; animation-duration: 12s; animation-delay: 4s; }
+.hero-bubbles span:nth-child(8)  { left: 67%; width: 24px; height: 24px; animation-duration: 16s; animation-delay: 1.5s; }
+.hero-bubbles span:nth-child(9)  { left: 75%; width: 18px; height: 18px; animation-duration: 14s; animation-delay: 7s; }
+.hero-bubbles span:nth-child(10) { left: 83%; width: 26px; height: 26px; animation-duration: 18s; animation-delay: 3.5s; background: rgba(250, 169, 72, 0.12); border-color: rgba(250, 169, 72, 0.2); }
+.hero-bubbles span:nth-child(11) { left: 91%; width: 12px; height: 12px; animation-duration: 11s; animation-delay: 2.5s; }
+.hero-bubbles span:nth-child(12) { left: 96%; width: 20px; height: 20px; animation-duration: 15s; animation-delay: 5.5s; }
+
+@keyframes bubble-rise {
+  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-115vh) scale(1); opacity: 0; }
+}
+
+/* Wave divider */
+.hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 2;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+.hero-wave path {
+  fill: #fff;
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: 7rem 0;
+    padding: 7rem 0 9rem;
   }
   .hero h1 {
     font-size: 3.4rem;
+  }
+  .hero-wave svg {
+    height: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .hero h1,
+  .hero .subheadline,
+  .hero .btn-lg,
+  .hero-bubbles span {
+    animation: none;
+  }
+  .hero h1,
+  .hero .subheadline,
+  .hero .btn-lg {
+    opacity: 1;
+  }
+  .hero-bubbles {
+    display: none;
   }
 }
 
