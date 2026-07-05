@@ -386,3 +386,216 @@ a {
   font-size: 0.85rem;
   color: var(--color-stone);
 }
+
+/* Landing page (pricing) header */
+.landing-header .header-inner {
+  justify-content: space-between;
+}
+
+.landing-phone {
+  font-weight: 600;
+  color: var(--color-slate-dark);
+}
+
+.landing-phone:hover {
+  color: var(--color-amber);
+}
+
+/* Pricing hero */
+.pricing-hero {
+  padding: 3.5rem 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-amber);
+  margin: 0 0 1rem;
+}
+
+.pricing-hero h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-hero h1 {
+    font-size: 2.75rem;
+  }
+}
+
+/* Pricing form section */
+.pricing-form-section {
+  padding-top: 3rem;
+}
+
+.pricing-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .pricing-layout {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+.quote-form {
+  background: var(--color-cream);
+  border: 1px solid var(--color-stone);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.quote-form h2 {
+  margin: 0 0 0.5rem;
+  color: var(--color-slate-dark);
+}
+
+.form-subtitle {
+  margin: 0 0 1.5rem;
+  color: #555;
+}
+
+.quote-form label {
+  display: block;
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+  color: var(--color-slate-dark);
+}
+
+.quote-form input,
+.quote-form select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-stone);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.quote-form input:focus,
+.quote-form select:focus {
+  outline: 2px solid var(--color-slate);
+  outline-offset: 1px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.form-disclaimer {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Pricing tiers */
+.pricing-tiers h2 {
+  margin: 0 0 1.25rem;
+  color: var(--color-slate-dark);
+}
+
+.price-card {
+  position: relative;
+  border: 1px solid var(--color-stone);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-card-featured {
+  border-color: var(--color-amber);
+  border-width: 2px;
+}
+
+.price-card-badge {
+  position: absolute;
+  top: -0.7rem;
+  right: 1.25rem;
+  background: var(--color-amber);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.price-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.price-card-head h3 {
+  margin: 0;
+  color: var(--color-slate-dark);
+}
+
+.price-card .price {
+  font-weight: 700;
+  color: var(--color-amber);
+  white-space: nowrap;
+}
+
+.price-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.92rem;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 1rem;
+}
+
+/* Trust strip */
+.trust-strip {
+  padding: 3rem 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .trust-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.trust-item strong {
+  color: var(--color-slate-dark);
+  font-size: 1.1rem;
+}
+
+.trust-item span {
+  color: #666;
+  font-size: 0.9rem;
+}

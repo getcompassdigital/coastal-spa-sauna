@@ -6,4 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Quote CTA clicked - hook this up to a form or booking flow.');
     });
   });
+
+  const quoteForm = document.getElementById('quote-form');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Thanks! This is a demo form, so nothing was actually submitted.');
+    });
+  }
 });
