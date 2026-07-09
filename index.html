@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coastal Spa & Sauna | Hot Tubs & Saunas</title>
+<meta name="description" content="Coastal Spa & Sauna is a family-owned dealer of premium hot tubs and saunas, delivered and installed across the coast. Explore our models and get a free quote.">
+<meta name="theme-color" content="#0E4A47">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coastal Spa & Sauna | Hot Tubs & Saunas">
+<meta property="og:description" content="Family-owned dealer of premium hot tubs and saunas, delivered and installed across the coast. Get a free quote today.">
+<meta property="og:url" content="https://coastalspaandsauna.example/">
+<meta property="og:image" content="https://placehold.co/1200x630/0E4A47/FBF7F0?text=Coastal+Spa+%26+Sauna">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,11 +39,16 @@
         <span class="logo-sub">Spa &amp; Sauna</span>
       </span>
     </a>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="site-nav">
       <a href="#models">Models</a>
+      <a href="#saunas">Saunas</a>
       <a href="#why-us">Why Us</a>
       <a href="#testimonials">Reviews</a>
       <a href="#contact">Contact</a>
+      <a href="pricing.html" class="btn btn-primary nav-cta-inline">Get a Free Quote</a>
     </nav>
     <a href="pricing.html" class="btn btn-primary nav-cta">Get a Free Quote</a>
   </div>
@@ -102,7 +116,50 @@
   </div>
 </section>
 
-<section class="section section-alt" id="why-us">
+<section class="section section-alt" id="saunas">
+  <div class="container">
+    <h2 class="section-title reveal">Our Saunas</h2>
+    <p class="section-subtitle reveal">Finish the ritual with heat that soothes.</p>
+    <div class="product-grid">
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://placehold.co/480x320/1E7B72/FFFFFF?text=Harborlight" alt="Harborlight infrared sauna">
+        </div>
+        <div class="product-body">
+          <h3>Harborlight Infrared</h3>
+          <p>A two-person infrared cabin that warms deep and fast, ideal for a low-energy daily reset.</p>
+          <a href="pricing.html" class="product-link">Get a Quote <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://placehold.co/480x320/C7643F/FFFFFF?text=Nordic+Barrel" alt="Nordic barrel sauna">
+        </div>
+        <div class="product-body">
+          <h3>Nordic Barrel</h3>
+          <p>A four-person outdoor barrel sauna in western red cedar, available wood-fired or electric.</p>
+          <a href="pricing.html" class="product-link">Get a Quote <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://placehold.co/480x320/0E4A47/FFFFFF?text=Cove+Cabin" alt="Cove Cabin traditional sauna">
+        </div>
+        <div class="product-body">
+          <h3>Cove Cabin</h3>
+          <p>A traditional indoor cabin sauna seating up to five, with a premium heater and glass door.</p>
+          <a href="pricing.html" class="product-link">Get a Quote <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-us">
   <div class="container">
     <h2 class="section-title reveal">Why Choose Coastal Spa &amp; Sauna</h2>
     <div class="values-grid">
@@ -194,6 +251,8 @@
     <p>&copy; 2026 Coastal Spa &amp; Sauna. This is a demo site for pitch purposes only.</p>
   </div>
 </footer>
+
+<a href="pricing.html" class="mobile-quote-bar">Get a Free Quote</a>
 
 <script src="script.js"></script>
 </body>

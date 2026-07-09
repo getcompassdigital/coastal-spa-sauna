@@ -38,5 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile navigation toggle.
+    const navToggle = header.querySelector('.nav-toggle');
+    const nav = header.querySelector('.nav');
+    if (navToggle && nav) {
+      const setOpen = (open) => {
+        header.classList.toggle('nav-open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', () => {
+        setOpen(!header.classList.contains('nav-open'));
+      });
+      // Close the menu after tapping a link or pressing Escape.
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setOpen(false);
+      });
+    }
   }
 });
