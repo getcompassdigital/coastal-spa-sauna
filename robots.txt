@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coastal-spa-sauna.thomas-12e.workers.dev/sitemap.xml
